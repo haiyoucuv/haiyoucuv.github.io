@@ -31,7 +31,7 @@ var config = {
     });
 
     var mouse = { x: 0, y: 0 };
-    var moveLock = false;
+    var moveLock = true;
     window.addEventListener("mousedown", function (e) {
         mouse.x = e.x;
         mouse.y = e.y;
@@ -39,7 +39,7 @@ var config = {
     });
 
     window.addEventListener("mousemove", function (e) {
-        // if (moveLock) return;
+        if (moveLock) return;
         mouse.x = e.x;
         mouse.y = e.y;
     });
