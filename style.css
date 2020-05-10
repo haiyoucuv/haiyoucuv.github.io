@@ -55,7 +55,7 @@ body {
 }
 
 .menu-item:nth-child(1):hover~.bg {
-    left: 26%;
+    left: 1%;
 }
 
 .menu-item:nth-child(2):hover~.bg {
