@@ -1,0 +1,130 @@
+
+html {
+    font-size: 48px;
+
+    /*预设一些值*/
+    --iphone-black-bg: #000;
+    --iphone-black-text: #f2f2f2;
+
+    --iphone-white-bg: #fff;
+    --iphone-white-text: #8b8b99;
+    --iphone-white-text-highlight: #1d1d1f;
+
+    --iphone-red-bg: #960b19;
+    --iphone-red-text: #e57571;
+    --iphone-red-text-highlight: #f5f5f7;
+
+    --iphone-width: 460px;
+    --iphone-offscreen: -720px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 3000px;
+    font-family: Helvetica, serif;
+    background-color: #000;
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/**
+ * 图片居中
+ */
+.sticky-container .iphone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/**
+ * 文字样式
+ */
+.sticky-container .iphone h3 {
+    font-size: 1rem;
+    width: var(--iphone-width);
+    margin: 0 0 60px 0;
+}
+
+/**
+ * 图片样式
+ */
+.sticky-container .iphone img {
+    display: block;
+    width: var(--iphone-width);
+    margin-bottom: var(--iphone-offscreen);
+}
+
+
+/**
+ * 黑色iphone
+ */
+.sticky-container .iphone.black {
+    background-color: var(--iphone-black-bg);
+    z-index: 10;
+}
+
+.sticky-container .iphone.black h3 {
+    color: var(--iphone-black-text);
+}
+
+/**
+ * 白色iphone
+ */
+.sticky-container .iphone.white {
+    background-color: var(--iphone-white-bg);
+    z-index: 20;
+
+    clip-path: inset(100% 0 0 0); /* 遮罩 */
+}
+
+.sticky-container .iphone.white h3 {
+    color: var(--iphone-white-text);
+}
+
+.sticky-container .iphone.white h3 span {
+    color: var(--iphone-white-text-highlight);
+}
+
+/**
+ * 红色iphone
+ */
+.sticky-container .iphone.red {
+    background-color: var(--iphone-red-bg);
+    z-index: 30;
+
+    clip-path: inset(100% 0 0 0); /* 遮罩 */
+}
+
+.sticky-container .iphone.red h3 {
+    color: var(--iphone-red-text);
+}
+
+.sticky-container .iphone.red h3 span {
+    color: var(--iphone-red-text-highlight);
+}
+
+.sticky-container.no-sticky {
+    position: relative;
+    overflow: visible;
+}
+
+.sticky-container.no-sticky .iphone {
+    position: relative;
+}
+
+.sticky-container.no-sticky .iphone.red {
+    padding-bottom: calc(var(--iphone-offscreen) * -1);
+}
