@@ -3,6 +3,8 @@ window.document.addEventListener('scroll', function () {
     // 滚动百分比 0最顶 1最底
     // 滚动距离 / (滚动高度 - 窗口高度)
     var scrolled = document.documentElement.scrollTop / noStickyHeight;
+    // var scrolled = document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
 
     var $white = document.querySelector('.white');
     var $red = document.querySelector('.red');
